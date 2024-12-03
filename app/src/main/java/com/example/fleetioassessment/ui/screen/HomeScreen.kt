@@ -14,6 +14,7 @@ import com.example.fleetioassessment.viewmodel.VehicleViewModel
 @Composable
 fun HomeScreen(vm:VehicleViewModel, onNavigate: (String) -> Unit) {
 
+    vm.getVehicle()
 
     Column(
         modifier = Modifier.fillMaxSize()
