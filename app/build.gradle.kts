@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.fleetioassessment"
-        minSdk = 35
+        minSdk = 34
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -54,7 +54,7 @@ dependencies {
 
 
     //Navigation Compose
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
 
     //retrofit
