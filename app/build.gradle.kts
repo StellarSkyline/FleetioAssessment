@@ -46,6 +46,7 @@ dependencies {
 
     //Hilt
     implementation("com.google.dagger:hilt-android:2.48")
+    implementation(libs.androidx.constraintlayout.compose.android)
 //    implementation(libs.androidx.navigation.common.ktx)
 //    implementation(libs.androidx.navigation.runtime.ktx)
     kapt("com.google.dagger:hilt-android-compiler:2.48")

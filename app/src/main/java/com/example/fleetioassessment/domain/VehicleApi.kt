@@ -5,7 +5,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface VehicleApi {
-
     @GET("v1/vehicles")
     suspend fun getVehicles(): Response<VehicleDTO>
 }
