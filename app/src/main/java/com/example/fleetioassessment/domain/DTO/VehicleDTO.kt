@@ -1,4 +1,4 @@
-package com.example.fleetioassessment.domain
+package com.example.fleetioassessment.domain.DTO
 
 data class VehicleDTO(
     val estimated_remaining_count: Int = 0,

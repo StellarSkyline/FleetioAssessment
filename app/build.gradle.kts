@@ -77,6 +77,17 @@ dependencies {
     //Extended Icons
     implementation("androidx.compose.material:material-icons-extended-android:1.7.4")
 
+    //Google Maps
+//    implementation("com.google.maps.android:android-maps-utils:3.8.2")
+//    implementation("com.google.maps.android:maps-utils-ktx:5.1.1")
+    // Google Maps SDK for Android
+    implementation(libs.places)
+    implementation(libs.play.services.maps)
+
+// Google maps Compose
+    implementation(libs.maps.compose)
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

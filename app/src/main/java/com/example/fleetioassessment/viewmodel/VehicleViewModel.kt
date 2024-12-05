@@ -1,16 +1,13 @@
 package com.example.fleetioassessment.viewmodel
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.fleetioassessment.R
-import com.example.fleetioassessment.domain.Record
+import com.example.fleetioassessment.domain.DTO.Record
 import com.example.fleetioassessment.data.interfaces.VehicleRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -24,10 +21,11 @@ class VehicleViewModel @Inject constructor(
     val cursor = savedStateHandle.getStateFlow("cursor", "")
     val records = savedStateHandle.getStateFlow("records", listOf<Record>())
     val searchText = savedStateHandle.getStateFlow("searchText", "")
+    val location = savedStateHandle.getStateFlow("location", listOf<Int>())
     private var savedRecord = Record()
 
     //User clicked record Handler
-    fun getRecord():Record = savedRecord
+    fun getRecord(): Record = savedRecord
     fun setRecord(record: Record) {
         savedRecord = record
     }
@@ -74,5 +72,14 @@ class VehicleViewModel @Inject constructor(
         displayDetails.add(Pair("Primary Meter:", savedRecord.primary_meter_value ?: "N/A"))
         displayDetails.add(Pair("Secondary Meter:", savedRecord.secondary_meter_value ?: "N/A"))
         return displayDetails
+    }
+
+    fun getLocation(vehicleId: String, locationId: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repo.getLocation(vehicleId, locationId)
+            savedStateHandle["location"] = listOf(response.geolocation?.latitude, response.geolocation?.longitude)
+
+        }
+
     }
 }

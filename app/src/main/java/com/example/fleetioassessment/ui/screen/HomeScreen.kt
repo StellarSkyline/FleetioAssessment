@@ -24,10 +24,8 @@ import com.example.fleetioassessment.R
 import com.example.fleetioassessment.ui.components.ButtonArrow
 import com.example.fleetioassessment.ui.components.IncludeSpinner
 import com.example.fleetioassessment.ui.components.InputText
-import com.example.fleetioassessment.ui.components.TopBar
 import com.example.fleetioassessment.ui.components.VehicleItem
 import com.example.fleetioassessment.ui.navigation.Screen
-import com.example.fleetioassessment.ui.theme.ProjectColors
 import com.example.fleetioassessment.viewmodel.VehicleViewModel
 
 @Composable

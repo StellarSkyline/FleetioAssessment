@@ -26,7 +26,7 @@ fun ButtonArrow(
             "right" -> Icons.Default.KeyboardArrowRight
             else -> Icons.Default.Close
         }
-        //if (arrowDirection == "right") Icons.Default.KeyboardArrowRight else Icons.Default.KeyboardArrowLeft
+    //Supposed to handle isEnabled/Disabled Color
     val color = if (isEnabled) ProjectColors.color_green else ProjectColors.neutral_black
 
     Icon(

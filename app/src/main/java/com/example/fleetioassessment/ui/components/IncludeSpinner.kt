@@ -24,6 +24,8 @@ import kotlinx.coroutines.delay
 @Preview
 @Composable
 fun IncludeSpinner(modifier: Modifier = Modifier) {
+    //Handles error state when there is no search result
+
     val state = remember { mutableStateOf(true) }
     Column(
         modifier = modifier.fillMaxSize(),

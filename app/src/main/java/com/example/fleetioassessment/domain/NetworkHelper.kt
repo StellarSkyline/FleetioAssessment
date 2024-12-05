@@ -16,8 +16,8 @@ object NetworkHelper {
                     .build()
             )
         }
-        .connectTimeout(10, TimeUnit.SECONDS) // Connect timeout
-        .readTimeout(10, TimeUnit.SECONDS)    // Socket timeout
+        .connectTimeout(10, TimeUnit.SECONDS)
+        .readTimeout(10, TimeUnit.SECONDS)
         .build()
 
 }

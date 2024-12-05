@@ -11,17 +11,19 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.bumptech.glide.integration.compose.placeholder
 import com.example.fleetioassessment.R
-import com.example.fleetioassessment.domain.Record
+import com.example.fleetioassessment.domain.DTO.Record
 import com.example.fleetioassessment.ui.theme.ProjectColors
 
 @OptIn(ExperimentalGlideComposeApi::class)
@@ -67,20 +69,26 @@ fun VehicleItem(
                 horizontalAlignment = Alignment.Start
             ) {
                 Spacer(modifier = Modifier.height(10.dp))
-                TextLabel(
-                    modifier = Modifier,
-                    label = "Name",
-                    content = record.name ?: "N/A"
+
+                Text(
+                    text = "Name: ${record.name ?: "N/A"}",
+                    color = ProjectColors.dark_gray,
+                    fontSize = 16.sp,
+                    maxLines = 1
                 )
-                TextLabel(
-                    modifier = Modifier,
-                    label = "Make",
-                    content = record.make ?: "N/A"
+
+                Text(
+                    text = "Make: ${record.make ?: "N/A"}",
+                    color = ProjectColors.dark_gray,
+                    fontSize = 16.sp,
+                    maxLines = 1
                 )
-                TextLabel(
-                    modifier = Modifier,
-                    label = "Model",
-                    content = record.model ?: "N/A"
+
+                Text(
+                    text = "Model: ${record.model ?: "N/A"}",
+                    color = ProjectColors.dark_gray,
+                    fontSize = 16.sp,
+                    maxLines = 1
                 )
             }
         }
