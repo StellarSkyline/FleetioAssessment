@@ -13,5 +13,5 @@ Technologies Used
  - MVVM Pattern
  - Google Maps
 
-*Note: There is a folder on the root folder called "Fleetio UI Wireframe" this folder will have the affinity designer file i used to plan my simple UI
-*Note: I have added UI Feedback on the Edit Icon(Pencil) on the details page, this however is not hooked up to the Fleetio API. I just tried to add something that the user can experience. I can update and clean up the state logic for this if needed
+Note: There is a folder on the root folder called "Fleetio UI Wireframe" that contains the Affinity Designer file I used to plan my simple UI.
+Note: I have added UI feedback to the Edit icon (pencil) on the details page. While this feature is not currently connected to the Fleetio API, it provides a user experience preview. I can update and refine the state logic for this feature as needed.
