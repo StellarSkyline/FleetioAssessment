@@ -7,11 +7,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import com.example.fleetioassessment.data.sharedViewModel
+import com.example.fleetioassessment.ui.screen.DetailsScreen
 import com.example.fleetioassessment.ui.screen.HomeScreen
 import com.example.fleetioassessment.viewmodel.VehicleViewModel
 
 @Composable
-fun AppNavigation(paddingValues: PaddingValues) {
+fun AppNavigation(paddingValues: PaddingValues, onExit: () -> Unit) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.VehicleGraph.route) {
 
@@ -22,12 +23,19 @@ fun AppNavigation(paddingValues: PaddingValues) {
             composable(Screen.HomeScreen.route) { entry ->
                 val viewModel = entry.sharedViewModel<VehicleViewModel>(navController)
                 HomeScreen(viewModel) {
-                    //handle navigation
+                    if (it == "close") onExit() else navController.navigate(it)
+
+                }
+            }
+
+            composable(Screen.DetailsScreen.route) { entry ->
+                val viewModel = entry.sharedViewModel<VehicleViewModel>(navController)
+                DetailsScreen(viewModel) {
+                    navController.navigate(it)
                 }
             }
 
         }
-
 
 
     }

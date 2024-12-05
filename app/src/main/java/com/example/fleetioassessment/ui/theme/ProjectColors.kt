@@ -8,4 +8,5 @@ object ProjectColors {
     val light_gray = Color(0xFFF7FAFC)
     val dark_gray = Color(0xFF4A5568)
     val yellow = Color(0xFFFACC15)
+    val red = Color(0xFFFF3B30)
 }

@@ -23,7 +23,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             FleetioAssessmentTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    AppNavigation(innerPadding)
+                    AppNavigation(innerPadding){
+                        finish()
+                    }
                 }
             }
         }
