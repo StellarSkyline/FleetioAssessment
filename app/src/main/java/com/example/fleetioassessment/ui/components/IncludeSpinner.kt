@@ -21,12 +21,11 @@ import androidx.compose.ui.unit.sp
 import com.example.fleetioassessment.ui.theme.ProjectColors
 import kotlinx.coroutines.delay
 
-@Preview
 @Composable
 fun IncludeSpinner(modifier: Modifier = Modifier) {
     //Handles error state when there is no search result
-
     val state = remember { mutableStateOf(true) }
+
     Column(
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -58,4 +57,10 @@ fun IncludeSpinner(modifier: Modifier = Modifier) {
             state.value = false
         }
     }
+}
+
+@Composable
+@Preview
+fun IncludeSpinnerPreview() {
+    IncludeSpinner()
 }

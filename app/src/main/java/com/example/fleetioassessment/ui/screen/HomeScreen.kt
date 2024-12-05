@@ -132,9 +132,11 @@ fun HomeScreen(vm: VehicleViewModel, onNavigate: (String) -> Unit) {
                 vm.getVehicle()
             }
 
+            //Search Bar
             InputText(
                 modifier = Modifier.weight(3f),
                 text = searchText,
+                label = "Search Vehicle Name",
                 onChange = { vm.onChangeState(it) },
             ) {
                 vm.filterVehicle(searchText)
@@ -149,6 +151,6 @@ fun HomeScreen(vm: VehicleViewModel, onNavigate: (String) -> Unit) {
         }
 
         //Spinner while network call loading - records is empty
-        if(records.isEmpty()) IncludeSpinner(modifier = Modifier.layoutId("include_spinner"))
+        if (records.isEmpty()) IncludeSpinner(modifier = Modifier.layoutId("include_spinner"))
     }
 }

@@ -16,6 +16,7 @@ fun AppNavigation(paddingValues: PaddingValues, onExit: () -> Unit) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.VehicleGraph.route) {
 
+        //Added a Graph within the graph to easily share viewModels
         navigation(
             startDestination = Screen.HomeScreen.route,
             route = Screen.VehicleGraph.route

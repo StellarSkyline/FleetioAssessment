@@ -17,12 +17,12 @@ import com.example.fleetioassessment.ui.theme.ProjectColors
 @Composable
 fun TopBar(
     modifier: Modifier = Modifier,
-    title:String = "",
+    title: String = "",
     route: String = "",
     textColor: Color = ProjectColors.light_gray,
     arrowDirection: String = "left",
     onClick: (String) -> Unit
-){
+) {
     Row(
         modifier = modifier
             .fillMaxWidth()

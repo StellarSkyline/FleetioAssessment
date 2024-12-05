@@ -21,27 +21,26 @@ fun ButtonArrow(
     onClick: () -> Unit = {}
 ) {
     val icon =
-        when(arrowDirection) {
+        when (arrowDirection) {
             "left" -> Icons.Default.KeyboardArrowLeft
             "right" -> Icons.Default.KeyboardArrowRight
             else -> Icons.Default.Close
         }
-    //Supposed to handle isEnabled/Disabled Color
-    val color = if (isEnabled) ProjectColors.color_green else ProjectColors.neutral_black
-
     Icon(
         modifier = modifier
             .size(50.dp)
             .clickable { onClick() },
         imageVector = icon,
         contentDescription = "Arrow Button",
-        tint = color
+        tint = ProjectColors.color_green
     )
-
 }
 
 @Composable
 @Preview
 fun ButtonArrowPreview() {
-    ButtonArrow()
+    ButtonArrow(
+        arrowDirection = "left"
+
+    )
 }

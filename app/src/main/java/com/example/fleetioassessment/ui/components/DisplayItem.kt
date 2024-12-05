@@ -28,8 +28,8 @@ import com.example.fleetioassessment.ui.theme.ProjectColors
 @Composable
 fun DisplayItem(
     modifier: Modifier = Modifier,
-    title:String = "",
-    content:String = "",
+    title: String = "",
+    content: String = "",
     onClick: (String) -> Unit = {}
 ) {
 
@@ -62,17 +62,13 @@ fun DisplayItem(
         Icon(
             modifier = modifier
                 .size(50.dp)
-                .clickable { }
+                .clickable { onClick("Edit") }
                 .padding(end = 16.dp),
             imageVector = Icons.Default.Create,
             contentDescription = "Arrow Button",
             tint = ProjectColors.dark_gray
         )
-
-
-
     }
-
 }
 
 @Composable
@@ -82,5 +78,4 @@ fun DisplayItemPreview() {
         title = "Title",
         content = "Content"
     )
-
 }

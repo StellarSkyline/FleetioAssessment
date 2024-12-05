@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.sp
 fun InputText(
     modifier: Modifier = Modifier,
     text: String = "",
+    label: String = "",
     onChange: (String) -> Unit,
     onAction: () -> Unit,
 ) {
@@ -31,10 +32,10 @@ fun InputText(
             .height(60.dp),
         value = text,
         label = {
-            Text("Search Vehicle Name", maxLines = 1)
+            Text(label, maxLines = 1)
         },
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
-        keyboardActions = KeyboardActions{
+        keyboardActions = KeyboardActions {
             onAction()
             keyboardController?.hide()
         },
